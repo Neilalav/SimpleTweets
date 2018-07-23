@@ -66,6 +66,10 @@ public class TweetAdapter extends RecyclerView.Adapter<TweetAdapter.ViewHolder>{
             ivProfileImage = (ImageView) itemView.findViewById(R.id.ivProfilImage);
             tvUsername = (TextView) itemView.findViewById(R.id.tvUserName);
             tvBody = (TextView) itemView.findViewById(R.id.tvBody);
+
+
+
         }
+
     }
-}
+ }

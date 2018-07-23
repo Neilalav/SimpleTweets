@@ -1,6 +1,7 @@
 package com.codepath.apps.restclienttemplate;
 
 import android.os.Bundle;
+import android.support.v4.widget.SwipeRefreshLayout;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
@@ -18,15 +19,28 @@ import java.util.ArrayList;
 import cz.msebera.android.httpclient.Header;
 
 public class TimelineActivity extends AppCompatActivity {
+    private SwipeRefreshLayout swipeContainer;
+
     TwitterClient client;
     TweetAdapter tweetAdapter;
     ArrayList<Tweet>tweets;
     RecyclerView rvTweets;
+   // SimpleDateFormat sf;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_timeline);
+
+       // swipeContainer = (SwipeRefreshLayout) findViewById(R.id.swipeContainer);
+
+       /* swipeContainer.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
+                                                @Override
+                                                public void onRefresh() {
+                                                    fetchTimelineAsync(0);
+
+                                                }
+                                            });*/
 
         client= TwitterApp.getRestClient(this);
         //find the recycleView
@@ -42,6 +56,9 @@ public class TimelineActivity extends AppCompatActivity {
         populateTimeline();
 
     }
+
+   /* public void fetchTimelineAsync(int i) {
+    }*/
 
     private void populateTimeline() {
         client.getHomeTimeline(new JsonHttpResponseHandler(){

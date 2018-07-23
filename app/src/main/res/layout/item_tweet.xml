@@ -30,5 +30,7 @@
         android:layout_below="@+id/tvUserName"
         android:layout_marginLeft="5dp"
         android:layout_toEndOf="@+id/ivProfilImage"
-        android:text="TextView" />
+        android:text="TextView"
+        android:autoLink="all"
+        android:linksClickable="true"/>
 </RelativeLayout>
