@@ -15,6 +15,7 @@ import java.util.List;
 
 public class TweetAdapter extends RecyclerView.Adapter<TweetAdapter.ViewHolder>{
 
+
     private List<Tweet> mTweets;
     Context context;
 
@@ -59,6 +60,7 @@ public class TweetAdapter extends RecyclerView.Adapter<TweetAdapter.ViewHolder>{
         public TextView tvUsername;
         public TextView tvBody;
 
+
         public ViewHolder(View itemView){
             super(itemView);
 
@@ -70,6 +72,7 @@ public class TweetAdapter extends RecyclerView.Adapter<TweetAdapter.ViewHolder>{
 
 
         }
+
 
     }
  }
